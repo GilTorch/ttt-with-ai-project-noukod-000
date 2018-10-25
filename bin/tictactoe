@@ -30,21 +30,31 @@ case choice
     else
       player_1=Players::Computer.new("O")
       player_2=Players::Computer.new("X")
+      game=Game.new(player_1,player_2)
+      game.play
     end
   when "2"
     if first == "X"
       player_1=Players::Human.new("X")
       player_2=Players::Computer.new("O")
+      game=Game.new(player_1,player_2)
+      game.play
     else
       player_1=Players::Human.new("O")
       player_2=Players::Computer.new("X")
+      game=Game.new(player_1,player_2)
+      game.play
     end
   when "3"
     if first == "X"
       player_1=Players::Human.new("X")
       player_2=Players::Computer.new("O")
+      game=Game.new(player_1,player_2)
+      game.play
     else
       player_1=Players::Human.new("O")
       player_2=Players::Human.new("X")
+      game=Game.new(player_1,player_2)
+      game.play
     end
 end
