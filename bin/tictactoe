@@ -25,7 +25,9 @@ case choice
     if first == "X"
       player_1=Players::Computer.new("X")
       player_2=Players::Computer.new("O")
-    else 
+      game=Game.new(player_1,player_2)
+      game.play
+    else
       player_1=Players::Computer.new("O")
       player_2=Players::Computer.new("X")
     end
@@ -33,7 +35,7 @@ case choice
     if first == "X"
       player_1=Players::Human.new("X")
       player_2=Players::Computer.new("O")
-    else 
+    else
       player_1=Players::Human.new("O")
       player_2=Players::Computer.new("X")
     end
@@ -41,7 +43,7 @@ case choice
     if first == "X"
       player_1=Players::Human.new("X")
       player_2=Players::Computer.new("O")
-    else 
+    else
       player_1=Players::Human.new("O")
       player_2=Players::Human.new("X")
     end
