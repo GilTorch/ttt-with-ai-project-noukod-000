@@ -8,21 +8,22 @@ puts "What kind of game you want to play?"
 puts "1.- 0 player"
 puts "2.- 1 player"
 puts "3.- 2 player"
+
 loop do
   "Choose a valid option from 1 to 3"
-  choice=gets.strip
-  break if choice.to_i.between?(1,3)
+  @choice=gets.strip
+  break if @choice.to_i.between?(1,3)
 end
 
 loop do
   puts "Who should go first? X or O?"
-  first=gets.strip
-  break if first.upcase == "X" || first.upcase == "O"
+  @first=gets.strip
+  break if @first.upcase == "X" || @first.upcase == "O"
 end
 
-case choice
+case @choice
   when "1"
-    if first == "X"
+    if @first == "X"
       player_1=Players::Computer.new("X")
       player_2=Players::Computer.new("O")
       game=Game.new(player_1,player_2)
@@ -34,7 +35,7 @@ case choice
       game.play
     end
   when "2"
-    if first == "X"
+    if @first == "X"
       player_1=Players::Human.new("X")
       player_2=Players::Computer.new("O")
       game=Game.new(player_1,player_2)
@@ -46,7 +47,7 @@ case choice
       game.play
     end
   when "3"
-    if first == "X"
+    if @first == "X"
       player_1=Players::Human.new("X")
       player_2=Players::Computer.new("O")
       game=Game.new(player_1,player_2)
